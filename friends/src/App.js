@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import Friend from './Friend';
 
 class App extends Component {
   constructor() {
@@ -16,13 +17,13 @@ class App extends Component {
     .then(req => {
       this.setState({ friends: req.data })
     })
-    .catch(req => {console.log(req.statusText)})
+    .catch(err => {console.log(err)})
   }
 
   render() {
     return (
-      <div>
-        {this.state.friends.map(input => <div key={input.id}><h1>{input.name}</h1></div>)}
+      <div className="App">
+        {this.state.friends.map(input => <Friend key={input.id} data={input} />)}
       </div>
     );
   }
