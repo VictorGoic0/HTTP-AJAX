@@ -1,0 +1,23 @@
+.Friend {
+  width: 500px;
+  height: 300px;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Friend h1 {
+  width: 100%;
+  text-align: center;
+}
+
+.Friend h4 {
+  margin: 0 10px;
+}
+
+.age, .email {
+  width: 100%;
+  display: flex;
+}
