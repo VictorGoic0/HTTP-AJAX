@@ -8,6 +8,11 @@
   flex-wrap: wrap;
 }
 
+.Friend header {
+  width: 100%;
+  display: flex;
+}
+
 .Friend h1 {
   width: 100%;
   text-align: center;
@@ -20,4 +25,16 @@
 .age, .email {
   width: 100%;
   display: flex;
+}
+
+.Friend button {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  color: white;
+  background-color: maroon;
+  border: 1px solid maroon;
+  align-self: baseline;
+  font-size: 1.8rem;
+  margin: 2px 2px 0 0;
 }
