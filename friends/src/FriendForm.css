@@ -14,3 +14,12 @@ form input {
   width: 80%;
   height: 40px;
 }
+
+form button {
+  width: 200px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-size: 2rem;
+  border: 1px solid black;
+}
