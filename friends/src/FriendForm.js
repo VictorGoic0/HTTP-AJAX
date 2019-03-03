@@ -1,6 +1,7 @@
 import React from 'react';
 import './FriendForm.css';
 import axios from 'axios';
+import Navigation from './Navigation';
 
 class FriendForm extends React.Component {
   state = {
@@ -22,45 +23,41 @@ class FriendForm extends React.Component {
     console.log(this.state);
   }
 
-  addFriend = (e, item) => {
-    axios.post('http://localhost:5000/friends', item)
-    .then(res => {
-      console.log(res)
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }
-
   render() {
     return (
-      <form onSubmit={e => this.addFriend(e, this.state.friend)}>
-        <input
-        type="text"
-        name="name"
-        onChange={this.changeHandler}
-        placeholder="name"
-        value={this.state.friend.name}
-        />
+      <div>
+        <Navigation />
+        <form onSubmit={e => this.props.addFriend(e, this.state.friend)}>
+          <input
+          type="text"
+          name="name"
+          onChange={this.changeHandler}
+          placeholder="name"
+          value={this.state.friend.name}
+          required
+          />
 
-        <input
-        type="number"
-        name="age"
-        onChange={this.changeHandler}
-        placeholder="age"
-        value={this.state.friend.age}
-        />
+          <input
+          type="number"
+          name="age"
+          onChange={this.changeHandler}
+          placeholder="age"
+          value={this.state.friend.age}
+          required
+          />
 
-        <input
-        type="text"
-        name="email"
-        onChange={this.changeHandler}
-        placeholder="email"
-        value={this.state.friend.email}
-        />
+          <input
+          type="text"
+          name="email"
+          onChange={this.changeHandler}
+          placeholder="email"
+          value={this.state.friend.email}
+          required
+          />
 
-        <button>Add New Friend</button>
-      </form>
+          <button>Add New Friend</button>
+        </form>
+      </div>
     )
   }
 }
